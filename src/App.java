@@ -3,6 +3,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.PrintWriter;
+import java.nio.charset.Charset;
 import java.util.Scanner;
 
 import javax.swing.JButton;
@@ -250,7 +251,7 @@ public class App {
                 int result = fileChooser.showOpenDialog(null);
                 if (result == JFileChooser.APPROVE_OPTION) {
                     File file = fileChooser.getSelectedFile();
-                    Scanner scanner = new Scanner(file);
+                    Scanner scanner = new Scanner(file, "UTF-8");
                     StringBuilder content = new StringBuilder();
 
                     while (scanner.hasNextLine()) {
@@ -299,7 +300,7 @@ public class App {
             try {
                 int result = fileChooser.showSaveDialog(null);
                 if (result == JFileChooser.APPROVE_OPTION) {
-                    PrintWriter writer = new PrintWriter(fileChooser.getSelectedFile());
+                    PrintWriter writer = new PrintWriter(fileChooser.getSelectedFile(), Charset.forName("UTF-8"));
                     writer.print(textArea.getText());
 
                     writer.close();
