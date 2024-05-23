@@ -10,7 +10,7 @@
 - Clone project về máy:
 
 ```bash
-git clone
+git clone https://github.com/dung204/java-elgamal.git
 ```
 
 - Mở project bằng IntelliJ IDEA hoặc Eclipse, chạy file `App.java`
@@ -20,7 +20,7 @@ git clone
 
 ```bash
 cd src
-javac src/App.java -d build
+javac App.java -d build
 cd build
 java App
 ```
